@@ -21,5 +21,7 @@ public class ShoppingCart {
     public void setItems(List<Item> items) {
         this.items = items;
     }
+    
+    public void removeItems(Item item) {items.remove(item);}
 
 }
