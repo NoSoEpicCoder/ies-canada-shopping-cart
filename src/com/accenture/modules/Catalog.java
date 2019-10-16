@@ -2,7 +2,6 @@ package com.accenture.modules;
 
 import com.accenture.modules.items.Book;
 import com.accenture.modules.items.CD;
-import com.accenture.modules.items.ItemType;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -10,6 +9,7 @@ import java.util.List;
 
 public class Catalog {
 
+    private ArrayList<Item> items;
     private ArrayList<Book> books;
     private ArrayList<CD> cds;
 
@@ -31,22 +31,9 @@ public class Catalog {
                 6);
         cds.add(cd);
 
-    }
-
-    public int find(Item item) {
-        int result = -1;
-
-        if(item.getItemType() == ItemType.BOOK) {
-            for (Book book : books)
-                if (book.equals(item))
-                    result = book.getId();
-        } else if(item.getItemType() == ItemType.CD){
-            for (CD cd : cds)
-                if (cd.equals(item))
-                    result = cd.getId();
-        }
-
-        return result;
+        items = new ArrayList<Item>();
+        items.add(book);
+        items.add(cd);
     }
 
     public List<Book> getBooks() {
@@ -63,6 +50,14 @@ public class Catalog {
 
     public void setCds(ArrayList<CD> cds) {
         this.cds = cds;
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
     }
 
 }

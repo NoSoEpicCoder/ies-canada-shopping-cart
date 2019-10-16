@@ -19,6 +19,10 @@ public abstract class Item {
         this.price = price;
     }
 
+    public Item(){
+
+    }
+
     public Item withDescription(String description) {
         this.description = description;
         return this;
